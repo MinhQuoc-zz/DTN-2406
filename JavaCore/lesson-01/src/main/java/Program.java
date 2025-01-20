@@ -73,5 +73,9 @@ public class Program {
         exam.duration = LocalDate.of(2024,9,9);
         exam.department = department;
         exam.createDate = LocalDate.now();
+
+        //Bài tập lesson 2
+        //Bài 1
+
     }
 }
