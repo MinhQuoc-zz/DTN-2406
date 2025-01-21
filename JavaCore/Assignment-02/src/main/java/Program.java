@@ -1,4 +1,6 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Program {
     public static void main(String[] args) {
@@ -50,11 +52,41 @@ public class Program {
         Answer answer2 = new Answer(2,"Conten 2",question1,true);
 
         // bài 1:
-        if (account2.getDepartmentId()==0){
-            System.out.println("nhân viên này chưa có phòng ban");
-        } else {
-            System.out.println("Phòng bạn của nhân viên này là " + account2.getDepartmentId());
+//        if (account2.getDepartmentId()==0){
+//            System.out.println("nhân viên này chưa có phòng ban");
+//        } else {
+//            System.out.println("Phòng bạn của nhân viên này là " + account2.getDepartmentId());
+//        }
+        // bài 2:
+        // Kiểm tra account thứ 2 tham gia những nhóm nào
+        List<Group> allGroups = new ArrayList<>();
+        allGroups.add(group1);
+        allGroups.add(group2);
+        List<Group> groupsOfAccount2 = new ArrayList<>();
+        for (Group group : allGroups) {
+            if (group.getCreator().getAccountId() == account2.getAccountId()) {
+                groupsOfAccount2.add(group);
+            }
         }
 
+        // Xử lý logic in thông báo
+        int numberOfGroups = groupsOfAccount2.size();
+        if (numberOfGroups == 0) {
+            System.out.println("Nhân viên này chưa có group");
+        } else if (numberOfGroups == 1 || numberOfGroups == 2) {
+            System.out.print("Group của nhân viên này là: ");
+            for (int i = 0; i < groupsOfAccount2.size(); i++) {
+                System.out.print(groupsOfAccount2.get(i).getGroupName());
+                if (i < groupsOfAccount2.size() - 1) {
+                    System.out.print(", ");
+                }
+            }
+            System.out.println();
+        } else if (numberOfGroups == 3) {
+            System.out.println("Nhân viên này là người quan trọng, tham gia nhiều group");
+        } else if (numberOfGroups >= 4) {
+            System.out.println("Nhân viên này là người hóng chuyện, tham gia tất cả các group");
+        }
     }
 }
+
