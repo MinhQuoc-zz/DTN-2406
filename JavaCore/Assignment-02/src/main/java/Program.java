@@ -22,7 +22,7 @@ public class Program {
         //GROUP
         Group group1 = new Group(1, "Group A", account1, LocalDate.of(2023, 1, 15));
         Group group2 = new Group(2, "Group B", account2, LocalDate.of(2024, 2, 20));
-
+        System.out.println(group1);
         // Hiển thị thông tin nhóm
         System.out.println("Group ID: " + group1.getGroupId());
         System.out.println("Group Name: " + group1.getGroupName());
