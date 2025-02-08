@@ -1,0 +1,7 @@
+public class Program01 {
+    public static void main(String[] args) {
+        Exercise01 exercise01 = new Exercise01();
+        Exercise03 exercise03 = new Exercise03();
+        exercise03.question01();
+    }
+}
