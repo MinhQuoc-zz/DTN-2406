@@ -60,7 +60,7 @@ public class QLCB {
     }
 
     private static void findByHoTen() {
-        System.out.println("=== CHức năng tìm kiếm cán bộ theo tên ===");
+        System.out.println("=== Chức năng tìm kiếm cán bộ theo tên ===");
         System.out.println("Nhập vào tên cán bộ cần tìm: ");
         String hoTen = scanner.nextLine();
         boolean isExists = false;
