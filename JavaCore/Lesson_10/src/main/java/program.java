@@ -7,6 +7,7 @@ import java.util.Properties;
 
 public class program {
     public static void main(String[] args) throws Exception{
+        // đọc file
         Properties properties = new Properties();
         properties.load(new FileInputStream("src/main/resources/database.properties"));
         String url = properties.getProperty("url");
